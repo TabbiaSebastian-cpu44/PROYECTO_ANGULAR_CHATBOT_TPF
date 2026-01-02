@@ -1,0 +1,36 @@
+<div class="chats-wrapper">
+  <div class="chats-header">
+    <div class="header-top">
+      <h2>Chats</h2>
+      <button class="new-chat-btn" (click)="createChat()">＋</button>
+    </div>
+
+    <input type="text" placeholder="Buscar chat">
+  </div>
+
+  <div class="chat-list">
+    @for (chat of chats; track chat.id) {
+      <a [routerLink]="['/chat', chat.id]" class="chat-item">
+        <div class="avatar-wrapper">
+          <img [src]="chat.avatar" alt="{{ chat.name }}" class="avatar" (error)="onAvatarError($event)">
+          <div class="avatar-fallback">{{ chat.name.charAt(0).toUpperCase() }}</div>
+        </div>
+
+        <div class="chat-info">
+          <strong>{{ chat.name }}</strong>
+          <p>{{ chat.messages.at(-1)?.text || 'Nuevo chat' }}</p>
+        </div>
+
+        <div class="chat-time">
+          {{ chat.messages.at(-1)?.time }}
+        </div>
+
+        <button class="delete-btn" (click)="deleteChat(chat.id, $event)" title="Borrar chat">
+          🗑️
+        </button>
+      </a>
+    } @empty {
+      <p class="no-chats">No hay chats aún. ¡Creá uno nuevo!</p>
+    }
+  </div>
+</div>

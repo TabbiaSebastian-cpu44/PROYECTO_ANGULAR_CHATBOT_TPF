@@ -1,0 +1,77 @@
+<div class="chat-wrapper">
+  
+  <div *ngIf="!chat" class="no-chat-selected">
+    <div class="no-chat-content">
+      <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M21 11.5C21 16.97 16.97 21 11.5 21C9.43 21 7.47 20.33 5.88 19.14L2 20L3.86 16.12C2.67 14.53 2 12.57 2 10.5C2 5.03 6.03 1 11.5 1C16.97 1 21 5.03 21 11.5Z" fill="#8696a0"/>
+        <path d="M8.5 10.5C8.5 9.95 9.05 9.5 9.5 9.5C10.05 9.5 10.5 9.95 10.5 10.5C10.5 11.05 10.05 11.5 9.5 11.5C9.05 11.5 8.5 11.05 8.5 10.5Z" fill="#8696a0"/>
+        <path d="M14.5 10.5C14.5 9.95 15.05 9.5 15.5 9.5C16.05 9.5 16.5 9.95 16.5 10.5C16.5 11.05 16.05 11.5 15.5 11.5C15.05 11.5 14.5 11.05 14.5 10.5Z" fill="#8696a0"/>
+      </svg>
+      <h2>Elige un chat</h2>
+      <p>Selecciona un contacto de la lista para empezar a chatear</p>
+    </div>
+  </div>
+  
+
+  <ng-container *ngIf="chat">
+   
+    <header class="chat-header">
+      <button class="back-btn" routerLink="/chats">←</button>
+
+      <div class="chat-avatar">
+        <img 
+          [src]="chat.avatar" 
+          alt="{{ chat.name }}"
+          (error)="onImageError($event)"
+        >
+        <div class="avatar-fallback" *ngIf="imageError">
+          {{ chat.name.charAt(0).toUpperCase() }}
+        </div>
+      </div>
+
+      <div class="chat-meta">
+        <div class="chat-name">{{ chat.name }}</div>
+        <div class="chat-status">
+          <span *ngIf="chat.typing">escribiendo…</span>
+          <span *ngIf="!chat.typing">
+            {{ chat.online ? 'en línea' : chat.lastSeen }}
+          </span>
+        </div>
+      </div>
+    </header>
+
+    
+    <main class="chat-messages" #messages>
+      <div
+        *ngFor="let msg of chat.messages"
+        class="message"
+        [class.user]="msg.from === 'user'"
+        [class.bot]="msg.from === 'bot'"
+      >
+        <div class="bubble">
+          {{ msg.text }}
+          <span class="time">{{ msg.time }}</span>
+        </div>
+      </div>
+    </main>
+
+    
+    <footer class="chat-input">
+      <input
+        type="text"
+        placeholder="Escribí un mensaje"
+        [(ngModel)]="text"
+        (keyup)="onTyping()"
+        (keyup.enter)="send()"
+      />
+
+      <button
+        class="send-btn"
+        (click)="send()"
+        [disabled]="!text || text.trim().length === 0"
+      >
+        ➤
+      </button>
+    </footer>
+  </ng-container>
+</div>

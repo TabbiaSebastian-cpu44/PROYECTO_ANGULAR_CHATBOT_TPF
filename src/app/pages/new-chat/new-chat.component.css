@@ -1,0 +1,63 @@
+/* CONTENEDOR */
+.new-chat-container {
+  height: 100vh;
+  background-color: #0b141a;
+  color: #e9edef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.new-chat-container h2 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+
+.new-chat-container p {
+  max-width: 320px;
+  font-size: 14px;
+  color: #8696a0;
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+
+.new-chat-container input {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background-color: #202c33;
+  color: #e9edef;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.new-chat-container input::placeholder {
+  color: #8696a0;
+}
+
+
+.new-chat-container button {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #00a884;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.new-chat-container button:hover {
+  background-color: #029d7a;
+}

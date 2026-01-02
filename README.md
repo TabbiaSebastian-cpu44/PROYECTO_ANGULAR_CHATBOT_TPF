@@ -1,59 +1,50 @@
-# ProyectoAngularFinal
+# Proyecto Angular 17 – Chat Interactivo
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+## Descripción
+Este proyecto es una aplicación de chat desarrollada en **Angular 25**. Permite interactuar con múltiples chats de manera fluida, sin necesidad de recargar la página. Cada chat puede mostrar **avatares para las IAs**, mantener un **modo oscuro**, y la interfaz está diseñada para ocupar **toda la pantalla**.
 
-## Development server
+Mi objetivo es practicar y aplicar conceptos de Angular como **componentes**, **servicios**, **data binding**, **event binding** y **gestión de estados**.
 
-To start a local development server, run:
+---
 
+## Funcionalidades
+
+- **Cambio de chat sin recargar la página:** Navega entre distintas conversaciones sin perder el historial.  
+- **Modo oscuro:** Estilo visual adaptable para mejorar la experiencia.  
+- **Pantalla completa:** La app se ajusta automáticamente al tamaño de la ventana.  
+- **Interacción dinámica:** Los usuarios envían mensajes y reciben respuestas de los bots.  
+
+---
+
+##Instalación
+
+1. Clonar el repositorio:
 ```bash
+git clone <URL_DEL_REPOSITORIO>
+
+npm install
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Uso:
+Seleccionar un chat desde la lista.
+Escribir un mensaje en el input y presionar Enter o el botón de enviar.
+La IA responderá automáticamente.
+Cambiar entre chats sin recargar la página.
+Activar el modo oscuro/gamer desde el botón correspondiente.
 
-## Code scaffolding
+##Personalización
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Avatares: Coloca tus imágenes en public/ y actualiza la ruta en chat.service.ts.
+Respuestas de IA: Modifica la función de generación de respuestas  en chat.service.ts.
+Estilos: Ajusta styles.css o app.component.css para cambiar la apariencia general.
 
-```bash
-ng generate component component-name
-```
+Tecnologías utilizadas
+Angular 25.0.1
+TypeScript 5.9.2
+HTML / CSS
+Node.js / npm
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Autor: Octavio Sebastian Tabbia
+Curso / Desarrollo de Angular
+Fecha: 2026

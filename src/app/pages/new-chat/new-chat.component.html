@@ -1,0 +1,21 @@
+<div class="new-chat-container">
+
+  <h2>Nuevo chat</h2>
+
+  <p>
+    Creá un nuevo chat con una IA simulada.
+    Podés escribirle y te va a responder automáticamente.
+  </p>
+
+  <input
+    type="text"
+    placeholder="Nombre del chat"
+    [(ngModel)]="name"
+  />
+
+  <button (click)="createChat()">
+    Crear chat
+  </button>
+
+
+</div>
