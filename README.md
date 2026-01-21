@@ -1,4 +1,4 @@
-# Proyecto Angular 17 – Chat Interactivo
+# Proyecto Angular 25 – Chat Interactivo
 
 ## Descripción
 Este proyecto es una aplicación de chat desarrollada en **Angular 25**. Permite interactuar con múltiples chats de manera fluida, sin necesidad de recargar la página. Cada chat puede mostrar **avatares para las IAs**, mantener un **modo oscuro**, y la interfaz está diseñada para ocupar **toda la pantalla**.
